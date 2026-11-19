@@ -1,0 +1,33 @@
+# quam_libs: the QuAM components and helpers the JY agent's QM programs import,
+# packaged on its own so a client installs it from a small repository.
+# Copied unchanged from Quantum-Control-Applications-QuAM/Superconducting of a
+# qua-libs fork; BSD-3-Clause (LICENSE). Dependencies are only what the modules
+# JY imports need.
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "as_qualibrate"
+version = "0.1.0"
+description = "QuAM components for Quantum Machines superconducting-qubit programs, as used by the JY agent"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = [
+    "quam==0.4.2",
+    "qualang-tools==0.20.0",
+    "qualibrate==0.2.2",
+    "qualibrate-config==0.1.11",
+    "qm-qua>=1.2.5",
+    "xarray",
+    "lmfit",
+    "tqdm",
+    "more_itertools",
+    "tomli>=2.0.1; python_version < '3.11'",
+]
+
+[tool.setuptools.packages.find]
+include = ["quam_libs*"]
+namespaces = true
